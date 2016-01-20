@@ -40,7 +40,7 @@
 
       </div>
     </div>
-    <div class="parallax"><img style="display: block; transform: translate3d(-50%, 426px, 0px);" src="background1.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img style="display: block; transform: translate3d(-50%, 426px, 0px);" src="../img/IMG84133-3.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 
@@ -89,7 +89,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img style="display: block; transform: translate3d(-50%, 501px, 0px);" src="background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img style="display: block; transform: translate3d(-50%, 501px, 0px);" src="../img/photo-1418065460487-3e41a6c84dc5.jpeg" alt="Unsplashed background img 2"></div>
   </div>
 
   <div class="container">
