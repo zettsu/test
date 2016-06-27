@@ -1,17 +1,22 @@
 from flask import Flask, render_template
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
+@app.route('/dash')
 def main():
    return render_template('index.html')
    
-@app.route('/showSignUp')
+@app.route('/signUp')
 def showSignUp():
-    return render_template('signup.html')
+   return render_template('signup.html')
+   
+@app.route('/signIn')
+def showSignIn():
+   return render_template('index.html')
 
 @app.route('/signOut')
-def showSignUp():
-    return render_template('index.html')
+def showSignOut():
+   return render_template('signout.html')
 
 if __name__ == "__main__":
-    app.run()
+   app.run()
