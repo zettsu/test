@@ -18,37 +18,41 @@
         <nav>
           <ul class="nav nav-pills pull-right">
             <li role="presentation" ><a href="dash">Dash</a></li>
-            <li role="presentation"><a href="#">Sign In</a></li>
-            <li role="presentation" class="active"><a href="showSignOut">Sign Out</a></li>
-            
+            <li role="presentation"><a href="signIn">Sign In</a></li>            
           </ul>
         </nav>
-        <h3 class="text-muted">Python Flask App</h3>
+        <h3 class="text-muted">Bienvenidos.</h3>
       </div>
  
       <div class="jumbotron">
-        <h1>Bucket List App</h1>
+        <h2 class="text-muted" >New admin user</h2>
         <form class="form-signin">
-        <label for="inputName" class="sr-only">Name</label>
-        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-
-        <label for="inputDescription" class="sr-only">Description</label>
-        <input type="name" name="inputDescription" id="inputDescription" class="form-control" placeholder="Description" required autofocus>
-
-        <label for="inputStatus" class="sr-only">Status</label>
-        <input type="name" name="inputStatus" id="inputDescription" class="form-control" placeholder="Status" required autofocus>
-
-        
-        <label for="inputLevel" class="sr-only">Level</label>
-        <input type="name" name="inputLevel" id="inputLevel" class="form-control" placeholder="Level" required autofocus>
-
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
-         
-        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
-      </form>
+	        <label for="inputName" class="sr-only">Name</label>
+	        <input type="text" name="inputName" id="inputName" class="form-control" placeholder="Name" required min="4" max="45" autofocus>
+	        
+	        <label for="inputUserEmail" class="sr-only">Email address</label>
+	        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+	        
+	        <label for="inputUserEmailRecovery" class="sr-only">Email recovery address</label>
+	        <input type="email" name="inputEmailRecovery" id="inputEmailRecovery" class="form-control" placeholder="Email address" required autofocus>
+	
+	        <label for="inputUserDescription" class="sr-only">Description</label>
+	        <input type="text" name="inputDescription" id="inputDescription" class="form-control" placeholder="Description" required autofocus>
+	
+	        <label for="inputUserStatus" class="sr-only">Status</label>
+	        <input type="text" name="inputUserStatus" id="inputUserStatus" class="form-control" placeholder="Status" hidden="hidden" >
+	
+	        <label for="inputUserLevel" class="sr-only">Level</label>
+	        <input type="text" name="inputLevel" id="inputLevel" class="form-control" placeholder="User level" required autofocus>
+	
+	        <label for="inputUserPassword" class="sr-only">Password</label>
+	        <input type="password" name="inputUserPassword" id="inputUserPassword" class="form-control" placeholder="User Password" required>
+	        
+	        <label for="inputUserPasswordMatch" class="sr-only">Password Match</label>
+	        <input type="password" name="inputUserPasswordMatch" id="inputUserPasswordMatch" class="form-control" placeholder="User Password Match" required>
+	         
+	        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
+      	</form>
       </div>
  
        
@@ -62,7 +66,7 @@
     <script>
         $(function() {
             $('#btnSignUp').click(function() {
-         
+         		alert($('form').serialize());
                 $.ajax({
                     url: '/signUp',
                     data: $('form').serialize(),
