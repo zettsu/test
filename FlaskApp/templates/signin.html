@@ -27,7 +27,7 @@
         <h2 class="text-muted" >Sign In</h2>
         <form class="form-signin">	        
 	        <label for="inputUserEmail" class="sr-only">Email address</label>
-	        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+	        <input type="email" name="inputUserEmail" id="inputUserEmail" class="form-control" placeholder="Email address" required autofocus>
 	        
 	        <label for="inputUserPassword" class="sr-only">Password</label>
 	        <input type="password" name="inputUserPassword" id="inputUserPassword" class="form-control" placeholder="User Password" required>
@@ -47,9 +47,8 @@
     <script>
         $(function() {
             $('#btnSignIn').click(function() {
-         		alert($('form').serialize());
                 $.ajax({
-                    url: '/signIn',
+                    url: '/validatelogin',
                     data: $('form').serialize(),
                     type: 'POST',
                     success: function(response) {
