@@ -12,7 +12,7 @@ def showSignUp():
    
 @app.route('/signIn')
 def showSignIn():
-   return render_template('index.html')
+   return render_template('signin.html')
 
 @app.route('/signOut')
 def showSignOut():
