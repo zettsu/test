@@ -3,7 +3,7 @@ import re
 from flask import Flask, request,flash, redirect, render_template, session, json
 
 app = Flask(__name__)
-#app.config.from_pyfile('configs/app.cfg')
+app.config.from_pyfile('../configs/app.cfg')
 
 @app.route('/')
 @app.route('/dash')
@@ -32,7 +32,5 @@ def validateLogin():
    	    return render_template('error.html',error = str(e))
     
 if __name__ == "__main__":
-    app.debug = False
+    app.debug = True
     app.run()
-    
-
