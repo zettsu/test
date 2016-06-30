@@ -1,9 +1,22 @@
 from datetime import datetime
 import re
 from flask import Flask, request,flash, redirect, render_template, session, json
+from logging.handlers import WatchedFileHandler
 
 app = Flask(__name__)
-app.config.from_pyfile('../configs/app.cfg')
+app.config.from_pyfile('configs/app.cfg')
+
+
+    
+
+@app.before_first_request
+def setup_logging():
+    """
+    Setup logging
+    """
+    handler = WatchedFileHandler("log/ticketspy.log")
+    app.logger.addHandler(handler)
+    app.logger.setLevel(logging.INFO)
 
 @app.route('/')
 @app.route('/dash')
@@ -34,3 +47,5 @@ def validateLogin():
 if __name__ == "__main__":
     app.debug = True
     app.run()
+    
+
