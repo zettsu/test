@@ -1,4 +1,4 @@
-# ticketspy
+# Ticketspy
 Description: Application for Issues tracking. Its simple and its free we want to do the best software for the best company.
 
 # Code Example
