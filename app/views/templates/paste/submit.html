@@ -1,0 +1,54 @@
+<!-- templates/submit.html -->
+{% extends "layout.html" %}
+{% block title %}Nuevo Paste{% endblock %}
+
+{% block content %}
+  <div style="float:right;">
+    <h3>Current Pastes</h3>
+    <table class="table table-striped" style="width:400px;float:right;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>CONTENT</th>
+        </tr>
+      </thead>
+      <tbody id="table_body">
+        {{ base_path }}
+      {% for paste in pastes %}
+        <tr>
+          <td>{{paste.id}}</td>
+          <td>{{paste.poster}}</td>
+          <td>{{paste.paste}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div style="float:left;">
+	 <h4>Add a Paste</h4>
+  	<form action="/paste/submit" method="POST">
+  			<p>Paste</p>
+        <input type="text" name="poster" ></input>
+        <br/>
+  			<textarea type="text" name="paste" rows="10" cols="20"></textarea>
+  			<br />
+  			<input type="submit" value="Paste"></input>
+  	</form>
+  </div>
+
+{% endblock %}
+{% block scripts %}
+	 <script type="text/javascript">
+	  $( document ).ready(function() {
+      /*  $.getJSON("/json")
+      .done(function( data ) {
+       
+      });
+      */
+	  });
+	  </script>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
